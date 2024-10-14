@@ -1,0 +1,76 @@
+Instalar Django Caso não tenha o Django instalado, execute o seguinte comando no terminal:
+
+bash
+Copiar código
+pip install django
+Criar o projeto Django No terminal, navegue até o diretório onde deseja criar o projeto e execute:
+
+bash
+Copiar código
+django-admin startproject seu_projeto
+cd seu_projeto
+Criar o app Dentro da pasta do projeto, crie um app chamado "seu_app":
+
+bash
+Copiar código
+python manage.py startapp seu_app
+Registrar o app no settings.py Abra o arquivo settings.py que está na pasta do projeto, encontre a variável INSTALLED_APPS, e adicione o nome do seu app à lista. Ficará assim:
+
+python
+Copiar código
+INSTALLED_APPS = [
+    # outros apps do Django
+    'seu_app',
+]
+Configurar o banco de dados para SQLite O Django já usa SQLite por padrão, então a configuração no settings.py deve estar correta. A linha correspondente será algo assim:
+
+python
+Copiar código
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+Passo 2: Preparar o banco de dados
+Criar as tabelas no banco de dados Execute as migrações para que o banco de dados seja criado, incluindo as tabelas para o sistema de administração:
+
+bash
+Copiar código
+python manage.py migrate
+Criar um superusuário Agora, crie um superusuário com seu nome como login e a senha 123456:
+
+bash
+Copiar código
+python manage.py createsuperuser
+Quando solicitado:
+
+Username: Seu nome (exemplo: Joao)
+Email address: [Digite um email válido]
+Password: 123456
+Testar o sistema de administração Agora que o banco de dados e o superusuário estão criados, inicie o servidor de desenvolvimento e verifique se tudo está funcionando:
+
+bash
+Copiar código
+python manage.py runserver
+Acesse http://127.0.0.1:8000/admin no navegador e faça login com seu superusuário.
+
+Passo 3: Criar o repositório no GitHub e subir o código
+Criar um repositório no GitHub
+
+Acesse GitHub e crie um novo repositório público.
+Copie o link do repositório.
+Inicializar o Git no projeto No diretório do seu projeto Django, execute os seguintes comandos para inicializar o Git, adicionar os arquivos e fazer o commit:
+
+bash
+Copiar código
+git init
+git add .
+git commit -m "Primeiro commit do projeto Django"
+Conectar ao repositório remoto e enviar os arquivos Execute os comandos abaixo para conectar ao repositório GitHub e enviar os arquivos:
+
+bash
+Copiar código
+git remote add origin https://github.com/SEU_USUARIO/seu_projeto.git
+git branch -M main
+git push -u origin main
