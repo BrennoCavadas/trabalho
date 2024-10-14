@@ -45,8 +45,8 @@ Copiar código
 python manage.py createsuperuser
 Quando solicitado:
 
-Username: Seu nome (exemplo: Joao)
-Email address: [Digite um email válido]
+Username: BrennoCavadas (exemplo: Joao)
+Email address: [brennocavadas17@gmail.com]
 Password: 123456
 Testar o sistema de administração Agora que o banco de dados e o superusuário estão criados, inicie o servidor de desenvolvimento e verifique se tudo está funcionando:
 
